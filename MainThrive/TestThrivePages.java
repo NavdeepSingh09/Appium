@@ -16,25 +16,25 @@ public class TestThrivePages {
 	WebDriver driver;
 	ThriveFirst objFirstPage;
 	ThriveSecond objSecondPage;
-	String userName = "charanjitsingh3";
-	String accessKey = "pLFxDQJCvFNijTYVqX2q";
+	String userName = " ";//Your UserName of BrowserStack
+	String accessKey = " ";//Your access Key of BrowserStack
 	
 @BeforeSuite
 	public void setupMyAppium() throws Exception
 	{
-		DesiredCapabilities caps = new DesiredCapabilities();
+	    DesiredCapabilities caps = new DesiredCapabilities();
 	    caps.setCapability("os", "android");
 	    caps.setCapability("os_version", "7.0"); 
 	    caps.setCapability("device", "Samsung Galaxy S8");
 	    caps.setCapability("realMobile", true);
 	    caps.setCapability("browserstack.debug", "true");
 	    caps.setCapability("project","Test App");
-		caps.setCapability("build", "Unknown");
-		caps.setCapability("name", "Thrive Get Started");
-		caps.setCapability("browserstack.video", "true");
-		caps.setCapability("browserstack.timezone", "Toronto");
-	    caps.setCapability("app", "bs://69cdc2a199429f4638cc27ab611d02653a602f88");
-		driver = new AndroidDriver <AndroidElement> (new URL("https://"+userName+":"+accessKey+"@hub-cloud.browserstack.com/wd/hub"), caps);		
+	    caps.setCapability("build", "Unknown");
+            caps.setCapability("name", "Thrive Get Started");
+	    caps.setCapability("browserstack.video", "true");
+	    caps.setCapability("browserstack.timezone", "Toronto");
+	    caps.setCapability("app", "Your Application URL");
+	    driver = new AndroidDriver <AndroidElement> (new URL("https://"+userName+":"+accessKey+"@hub-cloud.browserstack.com/wd/hub"), caps);		
 	}
 	
 @AfterSuite
@@ -54,8 +54,8 @@ public class TestThrivePages {
 	public void Fill_Get_Started_Form() throws Exception
 	{
 		objSecondPage= new ThriveSecond(driver);
-		String getExcelName= objSecondPage.ExcelFirstName();
-		String getLastName= objSecondPage.ExcelLastName();
+		String getExcelName= objSecondPage.ExcelFirstName();//Get First Name from Excel File
+		String getLastName= objSecondPage.ExcelLastName();// Get Last Name from Excel File
 		objSecondPage.ReggisterToThrive(getExcelName, getLastName, "abc@mailinator.com", "Abcd1234", "1234567");
 	}	
 
