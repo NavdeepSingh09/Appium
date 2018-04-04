@@ -16,8 +16,8 @@ public class ThriveLaunch {
 	@Test
 	public void SetCap() throws InterruptedException, Exception
 	{
-	String userName = "charanjitsingh3";
-	String accessKey = "pLFxDQJCvFNijTYVqX2q";
+	String userName = " ";
+	String accessKey = " ";
 	DesiredCapabilities caps = new DesiredCapabilities();
     caps.setCapability("os", "android");
     caps.setCapability("os_version", "7.0"); 
@@ -25,22 +25,20 @@ public class ThriveLaunch {
     caps.setCapability("realMobile", true);
     caps.setCapability("browserstack.debug", "true");
     caps.setCapability("project","Test App");
-	caps.setCapability("build", "Unknown");
-	//caps.setCapability("name", "Login page Android");
-	caps.setCapability("browserstack.video", "true");
-	caps.setCapability("browserstack.timezone", "Toronto");
+    caps.setCapability("build", "Unknown");
+    caps.setCapability("name", "Login page Android");
+    caps.setCapability("browserstack.video", "true");
+    caps.setCapability("browserstack.timezone", "Toronto");
+    caps.setCapability("app", "App URL Here");
+    AndroidDriver <AndroidElement> driver = new AndroidDriver <AndroidElement> (new URL("https://"+userName+":"+accessKey+"@hub-cloud.browserstack.com/wd/hub"), caps);
+    driver.findElement(By.id("com.compass_canada.thrive:id/login_getStarted")).click();
    
-	caps.setCapability("app", "bs://69cdc2a199429f4638cc27ab611d02653a602f88");
-   AndroidDriver <AndroidElement> driver = new AndroidDriver <AndroidElement> (new URL("https://"+userName+":"+accessKey+"@hub-cloud.browserstack.com/wd/hub"), caps);
-   driver.findElement(By.id("com.compass_canada.thrive:id/login_getStarted")).click();
-   
-   File FileLocation= new File("C:\\Users\\cheem\\eclipse-workspace\\Thrive\\InputData.xlsx");
+   File FileLocation= new File("Excel File Path Here.xlsx");
    FileInputStream LoadNewFile= new FileInputStream(FileLocation);
    XSSFWorkbook wb= new XSSFWorkbook(LoadNewFile);
    XSSFSheet ws= wb.getSheetAt(0);
    String FirstN= ws.getRow(0).getCell(0).getStringCellValue();
-   System.out.println("First Name="+FirstN);
- //driver.findElement(By.xpath("//android.widget.EditText[@text='First Name']")).sendKeys(FirstN);
+   driver.findElement(By.xpath("//android.widget.EditText[@text='First Name']")).sendKeys(FirstN);
    String LastN= ws.getRow(0).getCell(1).getStringCellValue();
    driver.findElement(By.xpath("//android.widget.EditText[@text='Last Name']")).sendKeys(LastN);
    String Email= ws.getRow(0).getCell(2).getStringCellValue();
