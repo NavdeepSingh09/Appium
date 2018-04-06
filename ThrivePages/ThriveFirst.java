@@ -19,8 +19,14 @@ public void ClickOnStart()
 	driver.findElement(ClickOnGetStarted).click();
 	
 }
+public String AssertGetStarted()
+{
+return driver.findElement(ClickOnGetStarted).getText();	
+
+}
 public void clickOnThriveGetStarted()
 {
+	this.AssertGetStarted();
 	this.ClickOnStart();
 }
 }
