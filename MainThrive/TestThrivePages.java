@@ -19,9 +19,9 @@ public class TestThrivePages {
 	WebDriver driver;
 	ThriveFirst objFirstPage;
 	ThriveSecond objSecondPage;
-	String userName = "charanjitsingh3";
-	String accessKey = "pLFxDQJCvFNijTYVqX2q";
-	String AppURL="bs://69cdc2a199429f4638cc27ab611d02653a602f88";
+	String userName = " ";
+	String accessKey = " ";
+	String AppURL="Application URL Here";
 	
 @BeforeSuite
 	public void setupMyAppium() throws Exception
