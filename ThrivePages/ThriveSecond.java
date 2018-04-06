@@ -31,7 +31,7 @@ public class ThriveSecond {
 		By AlertCheckEmailError=By.xpath("//android.widget.TextView[@text='Incorrect email format']");
 		By AlertCheckPass=By.xpath("//android.widget.TextView[@text='Minimum 8 characters, 1 capital letter and 1 number']");
 		By AlertCheckPhone=By.xpath("//android.widget.TextView[@text='10 digit phone number required']");
-		File filename= new File("C:\\Users\\cheem\\eclipse-workspace\\Thrive\\InputData.xlsx");
+		File filename= new File("Excel file path.xlsx");
 
 public String ExcelFirstName() throws Exception
 {
