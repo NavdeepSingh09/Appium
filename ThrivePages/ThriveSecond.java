@@ -19,6 +19,7 @@ public class ThriveSecond {
 		By Pass= By.xpath("//android.widget.EditText[@text='Password']");
 		By MobNo= By.xpath("//android.widget.EditText[@text='Mobile number']");
 		By ClickCreate= By.xpath("//android.widget.Button[@index='8' and @text='Create your account']");
+<<<<<<< HEAD
 		By AlertCheck1=By.xpath("//android.widget.TextView[@text='Mandatory Field']");
 		By AlertCheck2=By.xpath("//android.widget.TextView[@text='Mandatory field']");
 		By AssertWelCome=By.xpath("//android.widget.TextView[@resource-id='com.compass_canada.thrive:id/toolbar_title']");
@@ -32,6 +33,9 @@ public class ThriveSecond {
 		By AlertCheckPass=By.xpath("//android.widget.TextView[@text='Minimum 8 characters, 1 capital letter and 1 number']");
 		By AlertCheckPhone=By.xpath("//android.widget.TextView[@text='10 digit phone number required']");
 		File filename= new File("Excel file path.xlsx");
+=======
+		File filename= new File("Excel File Path in your computer.xlsx");
+>>>>>>> de80132ae99a1525ed457249611c45722dbb0a35
 
 public String ExcelFirstName() throws Exception
 {
@@ -40,7 +44,7 @@ public String ExcelFirstName() throws Exception
 	// Load workbook
 	XSSFWorkbook wb=new XSSFWorkbook(LoadFile);
 	// Load sheet- Here we are loading first sheet only
-	XSSFSheet sh1= wb.getSheetAt(0);
+	XSSFSheet sh1= wb.getSheetAt(0);//Use wb.getSheetAt(1) for second sheet
 	String FirstName= sh1.getRow(0).getCell(0).getStringCellValue();
 	wb.close();
 	return FirstName;
@@ -62,7 +66,6 @@ public String ExcelLastName() throws Exception
 		{
 			this.driver=driver;
 		}
-		//set first name in text box
 		public void setFirstName(String FName)
 		{
 			driver.findElement(FirstN).sendKeys(FName);

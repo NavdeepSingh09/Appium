@@ -19,14 +19,14 @@ public class TestThrivePages {
 	WebDriver driver;
 	ThriveFirst objFirstPage;
 	ThriveSecond objSecondPage;
-	String userName = " ";
-	String accessKey = " ";
-	String AppURL="Application URL Here";
+	String userName = "charanjitsingh3";//Your UserName of BrowserStack
+	String accessKey = "pLFxDQJCvFNijTYVqX2q";//Your access Key of BrowserStack
+	String AppURL= "bs://69cdc2a199429f4638cc27ab611d02653a602f88";
 	
 @BeforeSuite
 	public void setupMyAppium() throws Exception
 	{
-		DesiredCapabilities caps = new DesiredCapabilities();
+	    DesiredCapabilities caps = new DesiredCapabilities();
 	    caps.setCapability("os", "android");
 	    caps.setCapability("os_version", "7.0"); 
 	    caps.setCapability("device", "Samsung Galaxy S8");
@@ -34,12 +34,12 @@ public class TestThrivePages {
 	    caps.setCapability("browserstack.debug", "true");
 	    caps.setCapability("project","Test App");
 		caps.setCapability("build", "Unknown");
-		caps.setCapability("name", "Thrive Get Started");
-		caps.setCapability("browserstack.video", "true");
-		caps.setCapability("browserstack.timezone", "Toronto");
+        caps.setCapability("name", "Thrive Get Started");
+	    caps.setCapability("browserstack.video", "true");
+	    caps.setCapability("browserstack.timezone", "Toronto");
 	    caps.setCapability("app", AppURL);
-	   	driver = new AndroidDriver <AndroidElement> (new URL("https://"+userName+":"+accessKey+"@hub-cloud.browserstack.com/wd/hub"), caps);		
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	    driver = new AndroidDriver <AndroidElement> (new URL("https://"+userName+":"+accessKey+"@hub-cloud.browserstack.com/wd/hub"), caps);		
+	    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 	
 @AfterSuite
@@ -52,7 +52,6 @@ public class TestThrivePages {
 	public void Click_on_Get_Started()
 	{
 		objFirstPage=new ThriveFirst(driver);
-		System.out.println(objFirstPage.AssertGetStarted());
 		Assert.assertEquals(objFirstPage.AssertGetStarted(), "Get started");
 		objFirstPage.ClickOnStart();
 	}
@@ -84,11 +83,9 @@ public class TestThrivePages {
 		objSecondPage.PasswordAlert();
 		Assert.assertEquals(objSecondPage.PasswordAlert(), "Mandatory field");
 		objSecondPage.PhAlert();
-		Assert.assertEquals(objSecondPage.PhAlert(), "Mandatory field");
-		
-		String getExcelName= objSecondPage.ExcelFirstName();
-		String getLastName= objSecondPage.ExcelLastName();
-		
+		Assert.assertEquals(objSecondPage.PhAlert(), "Mandatory field");		
+		String getExcelName= objSecondPage.ExcelFirstName();//Get First Name from Excel File
+		String getLastName= objSecondPage.ExcelLastName();// Get Last Name from Excel File
 		objSecondPage.ReggisterToThrive(getExcelName, getLastName, "abc@mailinator", "Abcd1", "1234567");
 		objSecondPage.ClickOnCreate();
 		objSecondPage.AlertCheckEmail();
@@ -97,7 +94,6 @@ public class TestThrivePages {
 		Assert.assertEquals(objSecondPage.AlertCheckPassword(), "Minimum 8 characters, 1 capital letter and 1 number");
 		objSecondPage.AlertCheckPhone();
 		Assert.assertEquals(objSecondPage.AlertCheckPhone(), "10 digit phone number required");
-		
 	}	
 
 }
