@@ -19,9 +19,9 @@ public class TestThrivePages {
 	WebDriver driver;
 	ThriveFirst objFirstPage;
 	ThriveSecond objSecondPage;
-	String userName = "charanjitsingh3";//Your UserName of BrowserStack
-	String accessKey = "pLFxDQJCvFNijTYVqX2q";//Your access Key of BrowserStack
-	String AppURL= "bs://69cdc2a199429f4638cc27ab611d02653a602f88";
+	String userName = " ";//Your UserName of BrowserStack
+	String accessKey = " ";//Your access Key of BrowserStack
+	String AppURL= "Application URL";
 	
 @BeforeSuite
 	public void setupMyAppium() throws Exception
@@ -33,8 +33,8 @@ public class TestThrivePages {
 	    caps.setCapability("realMobile", true);
 	    caps.setCapability("browserstack.debug", "true");
 	    caps.setCapability("project","Test App");
-		caps.setCapability("build", "Unknown");
-        caps.setCapability("name", "Thrive Get Started");
+	    caps.setCapability("build", "Unknown");
+            caps.setCapability("name", "Thrive Get Started");
 	    caps.setCapability("browserstack.video", "true");
 	    caps.setCapability("browserstack.timezone", "Toronto");
 	    caps.setCapability("app", AppURL);
