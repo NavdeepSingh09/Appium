@@ -19,7 +19,6 @@ public class ThriveSecond {
 		By Pass= By.xpath("//android.widget.EditText[@text='Password']");
 		By MobNo= By.xpath("//android.widget.EditText[@text='Mobile number']");
 		By ClickCreate= By.xpath("//android.widget.Button[@index='8' and @text='Create your account']");
-<<<<<<< HEAD
 		By AlertCheck1=By.xpath("//android.widget.TextView[@text='Mandatory Field']");
 		By AlertCheck2=By.xpath("//android.widget.TextView[@text='Mandatory field']");
 		By AssertWelCome=By.xpath("//android.widget.TextView[@resource-id='com.compass_canada.thrive:id/toolbar_title']");
@@ -33,10 +32,6 @@ public class ThriveSecond {
 		By AlertCheckPass=By.xpath("//android.widget.TextView[@text='Minimum 8 characters, 1 capital letter and 1 number']");
 		By AlertCheckPhone=By.xpath("//android.widget.TextView[@text='10 digit phone number required']");
 		File filename= new File("Excel file path.xlsx");
-=======
-		File filename= new File("Excel File Path in your computer.xlsx");
->>>>>>> de80132ae99a1525ed457249611c45722dbb0a35
-
 public String ExcelFirstName() throws Exception
 {
 	//Load the file
